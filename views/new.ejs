@@ -1,0 +1,14 @@
+<%include partials/header%>
+
+<h1 class="title">New word</h1>
+<form class ="form" action="/words" method="POST">
+    <label for="Word">Word: </label>
+    <input type="text" name="Word" id="Word">
+    <label for="Translation">Translation: </label>
+    <input type="text" name="Translation" id="Translation">
+    <label for="Meaning">Meaning: </label>
+    <textarea name="Meaning" id="Meaning" cols="30" rows="10"></textarea>
+    <input class="button-submit" type="submit" value="Add">
+</form>
+
+<%include partials/footer%>

@@ -1,0 +1,35 @@
+<%include partials/header%>
+
+<h1 class="title">Words</h1>
+<form action="/words/search" method="GET">
+    <input type="text" name="word" id="">
+    <input type="submit" value="Search!">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table__head">Word</th>
+            <th class="table__head">Translation</th>
+            <th class="table__head">Meaning</th>
+            <th class="table__head">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%words.forEach(function(word){%>
+            <tr class="table__row">
+                <td class="table__col"><h3><%=word.Word%></h2></td>
+                <td class="table__col"><span><%=word.Translation%></span></td>
+                <td class="table__col"><p><%=word.Meaning%></p></td>
+                <td class="table__col">
+                    <a class="button-edit inline"href=<%="/words/"+word.ID+"/edit"%>>Edit</a>
+                    <form class="inline" method="POST" action=<%="/words/"+word.ID+"?_method=DELETE"%>>
+                        <input class="button-delete" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
+<a class="button-submit" href="/words/new">Add a new word!</a>
+
+<%include partials/footer%>

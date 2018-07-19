@@ -1,0 +1,14 @@
+<%include partials/header%>
+
+<h1 class="title">Edit word</h1>
+<form class ="form" method="POST" action=<%="/words/"+word.ID+"?_method=PUT"%>>
+    <label for="Word">Word: </label>
+    <input type="text" name="Word" id="Word" value=<%=word.Word%>>
+    <label for="Translation">Translation: </label>
+    <input type="text" name="Translation" id="Translation" value=<%=word.Translation%>>
+    <label for="Meaning">Meaning: </label>
+    <textarea name="Meaning" id="Meaning" cols="30" rows="10"><%=word.Meaning%></textarea>
+    <input class="button-submit"type="submit" value="Update">
+</form>
+
+<%include partials/header%>
