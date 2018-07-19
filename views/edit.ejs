@@ -1,14 +1,16 @@
 <%include partials/header%>
 
-<h1 class="title">Edit word</h1>
+<div class="container">
+<h1 class="logo">Vocapp</h1>
 <form class ="form" method="POST" action=<%="/words/"+word.ID+"?_method=PUT"%>>
-    <label for="Word">Word: </label>
-    <input type="text" name="Word" id="Word" value=<%=word.Word%>>
-    <label for="Translation">Translation: </label>
-    <input type="text" name="Translation" id="Translation" value=<%=word.Translation%>>
-    <label for="Meaning">Meaning: </label>
-    <textarea name="Meaning" id="Meaning" cols="30" rows="10"><%=word.Meaning%></textarea>
+    <h1 class="form-title">Edit word</h1>
+    <label class="label" for="Word">Word</label>
+    <input class="textinput" type="text" name="Word" id="Word" value=<%=word.Word%>>
+    <label class="label" for="Translation">Translation</label>
+    <input class="textinput" type="text" name="Translation" id="Translation" value=<%=word.Translation%>>
+    <label class="label" for="Meaning">Meaning</label>
+    <textarea class="textarea" name="Meaning" id="Meaning" cols="30" rows="10"><%=word.Meaning%></textarea>
     <input class="button-submit"type="submit" value="Update">
 </form>
-
+</div>
 <%include partials/header%>

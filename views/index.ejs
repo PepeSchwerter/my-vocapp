@@ -1,11 +1,12 @@
 <%include partials/header%>
-
-<h1 class="title">Words</h1>
-<h2>You have <%=words.length%> words</h2>
-<form action="/words/search" method="POST">
-    <input type="text" name="word" id="">
-    <input type="submit" value="Search!">
+<div class="container">
+<h1 class="logo">Vocapp</h1>
+<h1 class="title">Your Words</h1>
+<form class = "search" action="/words/search" method="POST">
+    <input class="searchbar" type="text" name="word" id="">
+    <input class="searchbutton" type="submit" value="Search!">
 </form>
+<a class="button-add" href="/words/new">Add a new word!</a>
 <table class="table">
     <thead>
         <tr>
@@ -18,19 +19,18 @@
     <tbody>
         <%words.forEach(function(word){%>
             <tr class="table__row">
-                <td class="table__col"><h3><%=word.Word%></h2></td>
+                <td class="table__col"><span><%=word.Word%></span></td>
                 <td class="table__col"><span><%=word.Translation%></span></td>
-                <td class="table__col"><p><%=word.Meaning%></p></td>
-                <td class="table__col">
-                    <a class="button-edit inline"href=<%="/words/"+word.ID+"/edit"%>>Edit</a>
+                <td class="table__col"><span><%=word.Meaning%></span></td>
+                <td class="table__col table__action">
+                    <a class="button-edit inline"href=<%="/words/"+word.ID+"/edit"%>>E</a>
                     <form class="inline" method="POST" action=<%="/words/"+word.ID+"?_method=DELETE"%>>
-                        <input class="button-delete" type="submit" value="Delete">
+                        <input class="button-delete" type="submit" value="X">
                     </form>
                 </td>
             </tr>
         <%});%>
     </tbody>
 </table>
-<a class="button-submit" href="/words/new">Add a new word!</a>
-
+</div>
 <%include partials/footer%>
