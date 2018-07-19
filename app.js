@@ -135,7 +135,7 @@ app.delete('/words/:id',(req,res) =>{
 });
 
 //start server
-var port = process.env.PORT;
+var port = process.env.PORT || 8000;
 app.listen(port,() =>{
     console.log(port, "It's alive!" );
 });
